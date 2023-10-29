@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="app">
+        <div class="message">
+            <div class="d-flex justify-content-center mt-2 mb-2">
+                <img src="./images/illustration-thank-you.svg" />
+
+            </div>
+          <div class=" d-flex justify-content-center">
+            <div id="rating" class="btn btn-warning sm text-success"></div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <h4 class="text-light">Thanks you!</h4>
+          </div>
+          <div style="color: gray;">
+           <p style="align-items: center; padding-left: 40px;" >We appreciate you taking your time to give a rating
+            if you ever need more support, dont hesistate to get
+            in touch</p>
+          </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Retrieve and display the selected count from the URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const selected = urlParams.get('selected');
+
+const ratingDisplay = document.getElementById('rating');
+if (selected !== null) {
+  ratingDisplay.textContent = `You selected ${selected} out of 5`; 
+} else {
+  ratingDisplay.textContent = 'No selection information available';
+}
+
+</script>
+</html>
